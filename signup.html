@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="Images/logo.png" type="image/gif" sizes="16x16">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Page</title>
     <link href="signup.css" rel="Stylesheet">
 </head>
 <script defer src="signup.js"></script>
+
 <body>
   
     <header class="Navigation">
         <a href="Losbeats.html" class="brand-logo">
-        <img src="images/logo.png">
+        <img src="Images/logo.png">
         <div class="brand-logo-name">LOSBEATS</div>
         </a>
         <nav class="Nav-links">
@@ -23,35 +25,44 @@
             </ul>
         </nav>
     </header>
-    <div class="error"></div>
+
     
-        <form class="login" id="form" action="/" method="GET">
-            <h1>
+        <form class="login" id="form" action="/HomeLanding.html" method="GET">
+
+            <h1 class="createacc">
                 Create Account
             </h1>
             <div class="textbox">
             <p>Username</p>
-            <input id="Username" type="text" name="Username" placeholder="Enter Username">
-        </div>
-        <div class="textbox">
+            <input id="username" type="text" placeholder="Enter Username" required>
             <p>Email</p>
-            <input id="Email" type="email" name="Email" placeholder="Enter Email";>
-        </div>
-        <div class="textbox">
+            <input id="Email" type="email" placeholder="Enter Email" required>
             <p>Password</p>
-            <input id="Password" type="password" name="Password" placeholder="Enter Password";>
-        </div>
-        <div class="textbox">
+            <input id="Password" type="password" placeholder="Enter Password" required>
             <p>Confirm Password</p>
-            <input id="Confirm Password" type="password" name="Confpass" placeholder="Confirm Password";>
+            <input id="Confirm" type="password"  placeholder="Confirm Password" required>
         </div>
-        <div class="checkbox">
-        <input type="checkbox"><span>I've Agreed with <a href="Losbeat-terms-conditions.pdf">The Terms & Conditions</a></span>
+        <label class="container">
+            <input type="checkbox" checked="checked" checked required>
+            <span class="checkmark"></span>
+          </label>
+        <div class="condition">
+            <span>I Agree to <a class="terms" href="Losbeat-terms-conditions.pdf">The Terms & Conditions</a></span>
         </div>
         
-        <a href="Recommend.html">
-        <input class="btn" type="button" name="Submit" value="Submit">
-        </a>
+        
+        <input class="btn" type="submit" value="Submit" onclick="passValues();" required>
+        
 </form>
+<script>
+    function passValues(){
+    var Profile_name = document.getElementById("username").value;
+    localStorage.setItem("TextValues" , Profile_name);
+    return false;
+}
+</script>
+
+
+
 </body>
 </html>

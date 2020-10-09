@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="Images/logo.png" type="image/gif" sizes="16x16">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
@@ -8,38 +9,42 @@
 </head>
 <script defer src="signin.js"></script>
 <body>
-    <header class="Navigation">
+    <header class="navigation">
         <a href="Losbeats.html" class="brand-logo">
-        <img src="images/logo.png">
-        <div class="brand-logo-name">LOSBEATS</div>
-        </a>
-        <nav class="Nav-links">
-            <ul>
-                <li>
-                    <a href="Discover.html">Discover</a>
-                </li>
-
-            </ul>
-        </nav>
+            <img src="Images/logo.png">
+            <div class="brand-logo-name">LOSBEATS</div>
+            </a>
+        </div>
+      
     </header>
-
-        
-        <form class="login" id="form" action="/" method="GET">
-            <h1>
-                LOGIN
-            </h1>
+        <form class="login" id="form" action="/HomeLanding.html" method="GET">
+            
             <div class="textbox">
                 <p>Username</p>
-                <input type="text" name="" placeholder="Enter Username">
-            </div>
-            <div class="textbox">
+                <input id="username"type="text" placeholder="Enter Username" required>
+                <br>
+                <br>
                 <p>Password</p>
-                <input type="password" name="" placeholder="Enter Password";>
+                <input type="password" placeholder="Enter Password" required>
             </div>
-            <a href="Recommend.html">
-            <input class="btn" type="button" name="" value="Sign in">
+            
+            <input class="btn" type="submit" value="Sign in" onclick="passValues();">
+           
+            <a href="forgotpassword.html">
+                <input class="btn" type="button" value="Forgot Password?">
             </a>
+            
+           
+
         </form>
+<script>
+    function passValues(){
+    var Profile_name = document.getElementById("username").value;
+    localStorage.setItem("TextValues" , Profile_name);
+    return false;
+    }
+ 
+</script>
 
 </body>
 </html>
